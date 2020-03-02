@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import itertools
 import random
 
-f = open("data_random_simularion2.dat", "a")
+f = open("data_random_simularion6.dat", "a")
 
 with KMC_Model(print_rates=False, banner=False) as model:
   model.parameters.T = 600
@@ -21,7 +21,7 @@ with KMC_Model(print_rates=False, banner=False) as model:
   E_react_Obridge_COcus = float(model.parameters.E_react_Obridge_COcus["value"])
   E_react_Obridge_CObridge = float(model.parameters.E_react_Obridge_CObridge["value"])
   
-  for iteration in xrange(1,30000):
+  for iteration in xrange(1,5000000):
     model.parameters.E_O_bridge = random.uniform(E_O_bridge-delta_e, E_O_bridge+ delta_e)
     model.parameters.E_O_cus = random.uniform(E_O_cus-delta_e,E_O_cus+delta_e)
     model.parameters.E_CO_bridge = random.uniform(E_CO_bridge-delta_e,E_CO_bridge+delta_e)
